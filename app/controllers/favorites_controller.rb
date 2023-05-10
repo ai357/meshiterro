@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
     post_image = PostImage.find(params[:post_image_id])
     # ログイン中ユーザーのfavoritesカラムに新規作成
     favorite = current_user.favorites.new(post_image_id: post_image.id)
+    # favoritesカラムの内容を保存
     favorite.save
     redirect_to post_image_path(post_image)
   end
