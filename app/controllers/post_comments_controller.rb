@@ -7,6 +7,7 @@ class PostCommentsController < ApplicationController
     comment = current_user.post_comments.new(post_comment_params)
     # 右辺のpost_image.idは5行目post_image
     comment.post_image_id = post_image.id
+    # コメント保存
     comment.save
     redirect_to post_image_path(post_image)
   end
