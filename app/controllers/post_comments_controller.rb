@@ -15,6 +15,7 @@ class PostCommentsController < ApplicationController
   # コメント削除
   def destroy
     PostComment.find(params[:id]).destroy
+    # 削除後、post_imageページに戻る
     redirect_to post_image_path(params[:post_image_id])
   end
 
