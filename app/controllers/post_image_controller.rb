@@ -1,5 +1,6 @@
 class PostImageController < ApplicationController
 
+  # post_imageを入れる枠を
   def new
     @post_image = PostImage.new
   end
