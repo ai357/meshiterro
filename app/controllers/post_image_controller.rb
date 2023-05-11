@@ -1,12 +1,14 @@
 class PostImageController < ApplicationController
 
-  # post_imageを入れる枠を
+  # post_imageを入れる枠を作る
   def new
     @post_image = PostImage.new
   end
 
+  # 投稿
   def create
     @post_image = PostImage.new(post_image_params)
+    
     @post_image.user_id = current_user.id
     if @post_image.save
       redirect_to post_image_index_path
