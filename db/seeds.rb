@@ -15,6 +15,7 @@ users = User.create!(
   ]
 )
 
+# 前もって投稿を作成
 PostImage.create!(
   [
     {shop_name: 'Cavello', image: ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg"), caption: '大人気のカフェです。', user_id: users[0].id },
