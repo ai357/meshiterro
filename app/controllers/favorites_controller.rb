@@ -17,6 +17,7 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(post_image_id: post_image.id)
     # お気に入り削除
     favorite.destroy
+    # 削除後、post_imageのviewに遷移する
     redirect_to post_image_path(post_image)
   end
 
