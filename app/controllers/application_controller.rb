@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
  before_action :authenticate_user!, except: [:top]
  before_action :configure_permitted_parameters, if: :devise_controller?
 
- # サインイン後の遷移先設定
+ # サインイン後の遷移先を
  def after_sign_in_path_for(resource)
   post_image_index_path
  end
